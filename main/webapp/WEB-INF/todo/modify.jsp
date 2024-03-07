@@ -15,7 +15,7 @@
 <form action="/todo/modify" method="post">
     <input type="text" name="tno" value="${requestScope.dto.tno}"readonly>
     <br>
-    <input type="text" name="title" value="${requestScope.dto.title}">
+    <input type="text" name="title" value="${requestScope.dto.title}" >
     <br>
     <input type="text" name="dueDate" value="${requestScope.dto.dueDate}">
     <br>

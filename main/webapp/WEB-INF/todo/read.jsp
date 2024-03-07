@@ -12,7 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/todo/modify" method="get">
     <input type="text" name="tno" value="${requestScope.dto.tno}" readonly>
     <br>
     <input type="text" name="title" value="${requestScope.dto.title}"readonly>
@@ -21,6 +20,8 @@
     <br>
     <input type="checkbox" name="finished" ${requestScope.dto.finished ? 'checked' : ''}readonly>
     <br>
+    <form action="/todo/modify" method="get">
+        <input type="hidden" name="tno" value="${requestScope.dto.tno}">
     <input type="submit" value="Modify/Remove List">
 </form>
 </body>

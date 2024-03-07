@@ -3,6 +3,7 @@ package com.ssg.service;
 import com.ssg.jdbcex.Service.TodoService;
 import com.ssg.jdbcex.domain.TodoVO;
 import com.ssg.jdbcex.dto.TodoDTO;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 /**
  * 24년 3월 7일 오전 수업
  */
-
+@Log4j2
 public class TodoServiceTests {
     // 1. TodoService 객체 선언
     private TodoService todoService;
@@ -42,7 +43,8 @@ public class TodoServiceTests {
 public void testread()throws Exception{
     Long tno = 33L;
        TodoDTO dto= todoService.read(tno);
-    System.out.println(dto);
+    //System.out.println(dto);
+    log.info(dto);
 }
 @Test
     public void testdelete()throws Exception{

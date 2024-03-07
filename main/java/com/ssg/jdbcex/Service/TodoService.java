@@ -10,6 +10,7 @@ import com.ssg.jdbcex.dao.TodoDAO;
 import com.ssg.jdbcex.domain.TodoVO;
 import com.ssg.jdbcex.dto.TodoDTO;
 import com.ssg.jdbcex.util.MapperUtil;
+import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
  * TodoService는 비즈니스 계층에서 DTO와 VO를 함께 사용하는 역할을 수행한다.
  * ModelMapper와 TodoDAO를 이용하여 구성되어 있다.
  */
+@Log4j2
 public enum TodoService {
 
     /**
@@ -45,7 +47,8 @@ public enum TodoService {
      */
     public int register(TodoDTO todoDTO) throws Exception {
         TodoVO vo = modelMapper.map(todoDTO, TodoVO.class); // TodoDTO를 TodoVO로 변환한다.
-        System.out.println("todoVo: " + vo);
+       // System.out.println("todoVo: " + vo);
+        log.info(vo);
         int result = todoDAO.insert(vo); // TodoDAO에 변환된 TodoVO를 전달하여 등록한다.
         return result;
     }
